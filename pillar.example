@@ -1,0 +1,19 @@
+logdna:
+  # LogDNA API key, you can retrieve this from https://app.logdna.com
+  apikey: 'YOUR-API-KEY-HERE'
+
+  # Paths and files (supports globs) to monitor
+  logpaths:
+    - '/var/log'
+
+  # Tags to apply to the agent for grouping purposes
+  tags:
+    - 'production'
+    - 'webserver'
+
+  # Files to exclude from logpaths
+  exclude:
+    - '*.gz'
+
+  # Alternative hostname. Defaults to your configured FQDN hostname by default
+  #hostname: 'my.alternative.example.com'

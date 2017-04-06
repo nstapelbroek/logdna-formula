@@ -1,0 +1,12 @@
+# Managed by SaltStack, do not edit.
+# Source: {{ source }}
+{%- set config = salt['pillar.get']('logdna', {}) %}
+logdir = {{ config.get('logpaths', ['/var/log'])|join(',') }}
+key = {{ config.get('apikey', '') }}
+hostname = {{ config.get('hostname', salt['grains.get']('fqdn', '')) }}
+{%- if 'tags' in config %}
+tags = {{ config.get('tags')|join(',') }}
+{%- endif %}
+{%- if 'exclude' in config %}
+exlude = {{ config.get('exclude')|join(',') }}
+{%- endif %}
