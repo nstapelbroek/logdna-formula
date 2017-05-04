@@ -8,5 +8,5 @@ hostname = {{ config.get('hostname', salt['grains.get']('fqdn', '')) }}
 tags = {{ config.get('tags')|join(',') }}
 {%- endif %}
 {%- if 'exclude' in config %}
-exlude = {{ config.get('exclude')|join(',') }}
+exclude = {{ config.get('exclude')|join(',') }}
 {%- endif %}
